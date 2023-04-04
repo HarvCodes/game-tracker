@@ -1,0 +1,85 @@
+/* Base styles, including dark mode and pink/red flashing */
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-bottom: #ccc 1px solid;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+#search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+#results, #user-games {
+  padding: 1rem;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #333;
+  color: #eee;
+}
+
+.dark-mode a {
+  color: #eee;
+}
+
+body.dark-mode header {
+  background-color: #444;
+  border-bottom: #555 1px solid;
+}
+
+body.dark-mode button {
+  background-color: #eee;
+  color: #333;
+}
+
+body.dark-mode button:hover {
+  background-color: #ddd;
+}
+
+/* Pink/red flashing styles */
+body.pink-red-flash {
+  background-color: pink;
+  animation: pinkRedFlash 5s linear;
+}
+
+@keyframes pinkRedFlash {
+  50% {
+    background-color: red;
+  }
+}

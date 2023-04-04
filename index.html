@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Tracker</title>
+     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js"></script>
+</head>
+<form id="search-form">
+  <!-- ... -->
+</form>
+<body>
+    <header>
+        <h1>Game Tracker</h1>
+        <nav>
+            <button id="toggle-dark-mode">Toggle Dark Mode</button>
+            <button id="login-btn">Login</button>
+            <button id="register-btn">Register</button>
+            <button id="logout-btn" hidden>Logout</button>
+        </nav>
+    </header>
+    <main>
+        <section id="search">
+            <input type="text" id="search-input" placeholder="Search for games">
+            <button id="search-btn">Search</button>
+            <div id="filters">
+                <label for="time-to-complete">Time to complete:</label>
+                <select id="time-to-complete">
+                    <option value="">Any</option>
+                    <option value="short">0-10 hours</option>
+                    <option value="medium">10-40 hours</option>
+                    <option value="long">40+ hours</option>
+                </select>
+                <label for="genre">Genre:</label>
+                <select id="genre">
+                    <option value="">Any</option>
+                    <!-- Add more genre options here -->
+                </select>
+                <label for="platform">Platform:</label>
+                <select id="platform">
+                    <option value="">Any</option>
+                    <!-- Add more platform options here -->
+                </select>
+                <label for="game-mode">Game Mode:</label>
+                <select id="game-mode">
+                    <option value="single-player">Single Player</option>
+                    <option value="multiplayer">Multiplayer</option>
+                    <option value="co-op">Co-op</option>
+                </select>
+            </div>
+        </section>
+        <section id="results">
+            <!-- Game Results and Suggestions -->
+            <div id="game-results"></div>
+            <div id="game-suggestions"></div>
+        </section>
+        <section id="user-games">
+            <!-- User's Saved Games -->
+            <h2>Your Games</h2>
+            <ul id="saved-games-list"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Game Tracker. All rights reserved.</p>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
