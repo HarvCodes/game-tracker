@@ -1,85 +1,86 @@
-/* Base styles, including dark mode and pink/red flashing */
-
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  color: #333;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #eee;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: #f4f4f4;
-  border-bottom: #ccc 1px solid;
+  padding: 20px;
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 nav {
   display: flex;
-  gap: 1rem;
+  gap: 10px;
+}
+
+input,
+button,
+select {
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 button {
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  background-color: #333;
+  background-color: #008cba;
   color: #fff;
   border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
 }
 
 button:hover {
-  background-color: #555;
+  background-color: #0079a1;
 }
 
-input[type="text"] {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  width: 100%;
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 128, 186, 0.5);
+}
+
+main {
+  padding: 20px;
 }
 
 #search {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+  gap: 10px;
 }
 
-#results, #user-games {
-  padding: 1rem;
+#filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
 }
 
-/* Dark mode styles */
-.dark-mode {
-  background-color: #333;
-  color: #eee;
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.dark-mode a {
-  color: #eee;
+.game-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
 }
 
-body.dark-mode header {
-  background-color: #444;
-  border-bottom: #555 1px solid;
-}
-
-body.dark-mode button {
-  background-color: #eee;
-  color: #333;
-}
-
-body.dark-mode button:hover {
-  background-color: #ddd;
-}
-
-/* Pink/red flashing styles */
-body.pink-red-flash {
-  background-color: pink;
-  animation: pinkRedFlash 5s linear;
-}
-
-@keyframes pinkRedFlash {
-  50% {
-    background-color: red;
-  }
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #f5f5f5;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.2);
 }
