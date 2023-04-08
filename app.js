@@ -85,3 +85,12 @@ async function logoutUser() {
   await signOut(auth);
   alert("Successfully logged out!");
 }
+document.getElementById("login-btn").addEventListener("click", (e) => {
+  e.preventDefault();
+  loginUser();
+});
+
+document.getElementById("register-btn").addEventListener("click", (e) => {
+  e.preventDefault();
+  registerUser();
+});
