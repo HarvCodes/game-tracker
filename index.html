@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<<head>
+<html>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Tracker</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
 </head>
-
-<form id="search-form">
-  <!-- ... -->
-</form>
 <body>
     <header>
         <h1>Game Tracker</h1>
@@ -64,14 +60,32 @@
     <footer>
         <p>&copy; 2023 Game Tracker. All rights reserved.</p>
     </footer>
-	
-	<script>
-  function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-  }
-</script>
-<script src="app.js"></script>
-	
+    
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore-compat.js"></script>
+    
+    <script>
+        const {
+            initializeApp,
+            getAnalytics,
+            getAuth,
+            signInWithEmailAndPassword,
+            createUserWithEmailAndPassword,
+            signOut,
+            onAuthStateChanged,
+            getFirestore,
+        } = firebase.default;
+    </script>
+
+    <script src="app.js" defer></script>
 </body>
 </html>
