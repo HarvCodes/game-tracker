@@ -58,26 +58,24 @@ function handleAuthentication() {
 }
 
 async function loginUser() {
-  const email = prompt("Enter your email:");
-  const password = prompt("Enter your password:");
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
   try {
-    await signInWithEmailAndPassword(auth, email, password);
-    alert("Successfully logged in!");
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log("User logged in:", userCredential.user);
   } catch (error) {
-    console.error("Error logging in:", error.message);
-    alert("Failed to log in. Please check your credentials and try again.");
+    console.error("Error during login:", error);
   }
 }
 
 async function registerUser() {
-  const email = prompt("Enter your email:");
-  const password = prompt("Enter your password:");
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
   try {
-    await createUserWithEmailAndPassword(auth, email, password);
-    alert("Successfully registered!");
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    console.log("User registered:", userCredential.user);
   } catch (error) {
-    console.error("Error registering user:", error.message);
-    alert("Failed to register. Please check your details and try again.");
+    console.error("Error during registration:", error);
   }
 }
 
@@ -85,12 +83,3 @@ async function logoutUser() {
   await signOut(auth);
   alert("Successfully logged out!");
 }
-document.getElementById("login-btn").addEventListener("click", (e) => {
-  e.preventDefault();
-  loginUser();
-});
-
-document.getElementById("register-btn").addEventListener("click", (e) => {
-  e.preventDefault();
-  registerUser();
-});
