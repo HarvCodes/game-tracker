@@ -1,3 +1,18 @@
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAWjpIJ5EBOpHNykAc-7YZXEJA_55ipw0Q",
+  authDomain: "harvs-game-tracker.firebaseapp.com",
+  projectId: "harvs-game-tracker",
+  storageBucket: "harvs-game-tracker.appspot.com",
+  messagingSenderId: "118470639156",
+  appId: "1:118470639156:web:2351a582685022ce769461",
+  measurementId: "G-NWF5PMQ7XH",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 document.addEventListener("DOMContentLoaded", function () {
   toggleDarkMode();
   handleAuthentication();
@@ -44,16 +59,15 @@ async function loginUser() {
 async function registerUser() {
   const email = document.getElementById("register-email").value;
   const password = document.getElementById("register-password").value;
-  try {
-    const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
-    console.log("User registered:", userCredential.user);
-  } catch (error) {
-    console.error("Error during registration:", error);
-  }
+try {
+const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+console.log("User registered:", userCredential.user);
+} catch (error) {
+console.error("Error during registration:", error);
+}
 }
 
-
 async function logoutUser() {
-  await firebase.auth().signOut();
-  alert("Successfully logged out!");
+await firebase.auth().signOut();
+alert("Successfully logged out!");
 }
