@@ -68,22 +68,28 @@
         }
     </script>
 
-    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
     
     <script>
-        const {
-            initializeApp,
-            getAnalytics,
-            getAuth,
-            signInWithEmailAndPassword,
-            createUserWithEmailAndPassword,
-            signOut,
-            onAuthStateChanged,
-            getFirestore,
-        } = firebase.default;
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAWjpIJ5EBOpHNykAc-7YZXEJA_55ipw0Q",
+          authDomain: "harvs-game-tracker.firebaseapp.com",
+          projectId: "harvs-game-tracker",
+          storageBucket: "harvs-game-tracker.appspot.com",
+          messagingSenderId: "118470639156",
+          appId: "1:118470639156:web:2351a582685022ce769461",
+          measurementId: "G-NWF5PMQ7XH",
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics(app);
+        const auth = firebase.auth(app);
+        const db = firebase.firestore(app);
     </script>
 
     <script src="app.js" defer></script>
