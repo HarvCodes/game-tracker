@@ -31,8 +31,8 @@ function handleAuthentication() {
 }
 
 async function loginUser() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const email = document.getElementById("login-email").value;
+  const password = document.getElementById("login-password").value;
   try {
     const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
     console.log("User logged in:", userCredential.user);
@@ -42,8 +42,8 @@ async function loginUser() {
 }
 
 async function registerUser() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const email = document.getElementById("register-email").value;
+  const password = document.getElementById("register-password").value;
   try {
     const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
     console.log("User registered:", userCredential.user);
@@ -51,6 +51,7 @@ async function registerUser() {
     console.error("Error during registration:", error);
   }
 }
+
 
 async function logoutUser() {
   await firebase.auth().signOut();
